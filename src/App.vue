@@ -4,13 +4,9 @@
  * @Autor: liushuhao
  * @Date: 2023-02-10 09:58:28
  * @LastEditors: liushuhao
- * @LastEditTime: 2023-02-10 15:24:22
+ * @LastEditTime: 2023-02-13 17:40:06
 -->
 <template>
-  <!-- <div id="nav">
-    <router-link to="/jinsha">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div> -->
   <router-view/>
 </template>
 
@@ -25,7 +21,6 @@
 
 #nav {
   padding: 30px;
-
   a {
     font-weight: bold;
     color: #2c3e50;

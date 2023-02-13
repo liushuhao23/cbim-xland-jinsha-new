@@ -4,7 +4,7 @@
  * @Autor: liushuhao
  * @Date: 2023-02-10 09:58:28
  * @LastEditors: liushuhao
- * @LastEditTime: 2023-02-10 15:56:49
+ * @LastEditTime: 2023-02-13 16:31:22
  */
 /* eslint-disable */
 declare module '*.vue' {
@@ -29,4 +29,5 @@ interface mountProps {
   singleSpa?: any
   startMicroCbimAcp?: any
   registry?: any
+
 }

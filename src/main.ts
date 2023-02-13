@@ -4,7 +4,7 @@
  * @Autor: liushuhao
  * @Date: 2023-02-10 09:58:28
  * @LastEditors: liushuhao
- * @LastEditTime: 2023-02-10 15:29:50
+ * @LastEditTime: 2023-02-13 16:45:04
  */
 /*
  * @Description: description
@@ -20,6 +20,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import App from './App.vue';
 import routes from './router';
 import store from './store';
+import CommunicationProtocol from './assets/utils/CommunicationProtocol';
 
 let instance: any = null;
 let router = null;
@@ -27,8 +28,9 @@ let router = null;
  * 渲染函数
  * 两种情况：主应用生命周期钩子中运行 / 微应用单独启动时运行
  */
+// eslint-disable-next-line @typescript-eslint/no-empty-function
 function render(props: mountProps = { container: '', registry: { activeRule: '' } }) {
-  const { container } = props;
+  const { container, routers } = props as any;
   // eslint-disable-next-line no-underscore-dangle
   console.log(window.__POWERED_BY_QIANKUN__, 'window.__POWERED_BY_QIANKUN__');
   // eslint-disable-next-line no-underscore-dangle
@@ -43,8 +45,10 @@ function render(props: mountProps = { container: '', registry: { activeRule: '' 
   instance = createApp(App);
   instance
     .use(store)
+    .use(CommunicationProtocol, props)
     .use(router)
     .mount(container ? (container as any).querySelector('#app') : '#app');
+  routers!.initRouterMap('jinsha', router);
 }
 // 独立运行时，直接挂载应用
 // eslint-disable-next-line no-underscore-dangle
