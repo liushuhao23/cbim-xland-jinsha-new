@@ -4,12 +4,10 @@
  * @Autor: liushuhao
  * @Date: 2023-02-13 15:10:28
  * @LastEditors: liushuhao
- * @LastEditTime: 2023-02-13 15:54:16
+ * @LastEditTime: 2023-02-13 22:41:30
  */
 
 import { ref } from 'vue';
-
-const { __CBIM_PLATFORM_APPLICATION_BOOT_DATA__ } = window as any;
 
 // eslint-disable-next-line import/no-mutable-exports
 let communicationProtocol = null;

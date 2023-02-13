@@ -4,7 +4,7 @@
  * @Autor: liushuhao
  * @Date: 2023-02-10 09:58:28
  * @LastEditors: liushuhao
- * @LastEditTime: 2023-02-13 16:45:04
+ * @LastEditTime: 2023-02-13 23:36:52
  */
 /*
  * @Description: description
@@ -48,7 +48,8 @@ function render(props: mountProps = { container: '', registry: { activeRule: '' 
     .use(CommunicationProtocol, props)
     .use(router)
     .mount(container ? (container as any).querySelector('#app') : '#app');
-  routers!.initRouterMap('jinsha', router);
+  // eslint-disable-next-line no-unused-expressions
+  base && (routers!.initRouterMap('jinsha', router));
 }
 // 独立运行时，直接挂载应用
 // eslint-disable-next-line no-underscore-dangle
