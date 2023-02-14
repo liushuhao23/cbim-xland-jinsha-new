@@ -4,7 +4,7 @@
  * @Autor: liushuhao
  * @Date: 2022-11-04 09:08:43
  * @LastEditors: liushuhao
- * @LastEditTime: 2023-02-14 18:55:17
+ * @LastEditTime: 2023-02-14 22:15:14
  */
 import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
 import { message } from 'ant-design-vue';
@@ -19,7 +19,7 @@ const ContentTypeMenu = {
 };
 // export const datacenterBaseURL = isDevelopment ? `http://localhost:${port}/api` : '/kunlun/datacenter';
 const Http = axios.create({
-  baseURL: isDev ? 'http://localhost:8081/api/' : '', // api请求的baseURL
+  baseURL: isDev ? 'https://xland-dev.cbim.org.cn/kunlun/datacenter' : '', // api请求的baseURL
   timeout: 600000,
   headers: {
     'Content-Type': ContentTypeMenu.json,

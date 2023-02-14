@@ -5,7 +5,7 @@
  * @Autor: liushuhao
  * @Date: 2021-09-26 16:25:25
  * @LastEditors: liushuhao
- * @LastEditTime: 2023-02-14 19:11:57
+ * @LastEditTime: 2023-02-14 22:51:32
  */
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
@@ -101,9 +101,7 @@ module.exports = {
     disableHostCheck: true,
     // 配置跨域请求头，解决开发环境的跨域问题
     headers: {
-      // 'Access-Control-Allow-Origin': 'http://localhost:8081',
-      'Access-Control-Allow-Credentials': true,
-      'Access-Control-Allow-Origin': 'http://localhost:8080',
+      'Access-Control-Allow-Origin': '*',
     },
     hot: true,
     proxy: {
