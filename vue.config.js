@@ -5,7 +5,7 @@
  * @Autor: liushuhao
  * @Date: 2021-09-26 16:25:25
  * @LastEditors: liushuhao
- * @LastEditTime: 2023-02-10 11:40:29
+ * @LastEditTime: 2023-02-14 19:11:57
  */
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
@@ -102,9 +102,20 @@ module.exports = {
     // 配置跨域请求头，解决开发环境的跨域问题
     headers: {
       // 'Access-Control-Allow-Origin': 'http://localhost:8081',
-      // 'Access-Control-Allow-Credentials': true,
-      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Credentials': true,
+      'Access-Control-Allow-Origin': 'http://localhost:8080',
     },
     hot: true,
+    proxy: {
+      '/api': {
+        // target: 'https://xland-test.cbim.org.cn/kunlun/datacenter', // test
+        target: 'https://xland-dev.cbim.org.cn/kunlun/datacenter', // dev
+        changeOrigin: true,
+        secure: true,
+        pathRewrite: {
+          '/api': '/',
+        },
+      },
+    },
   },
 };
