@@ -1,3 +1,11 @@
+/*
+ * @Description: description
+ * @Version: 2.0
+ * @Autor: liushuhao
+ * @Date: 2023-02-17 18:28:34
+ * @LastEditors: liushuhao
+ * @LastEditTime: 2023-02-22 16:27:37
+ */
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 import Home from '../views/Home.vue';
 import About from '../views/About.vue';
@@ -7,17 +15,28 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'Home',
-    component: Home,
+    redirect: '/user/users',
   },
   {
     path: '/about',
     name: 'About',
     component: About,
   },
+  // {
+  //   path: '/user',
+  //   name: 'User',
+  //   component: User,
+  // },
   {
     path: '/user',
     name: 'User',
-    component: User,
+    children: [
+      {
+        path: 'users',
+        name: 'User',
+        component: User,
+      },
+    ],
   },
   // {
   //   path: '/about',
