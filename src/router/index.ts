@@ -4,7 +4,7 @@
  * @Autor: liushuhao
  * @Date: 2023-02-17 18:28:34
  * @LastEditors: liushuhao
- * @LastEditTime: 2023-02-22 16:27:37
+ * @LastEditTime: 2023-02-22 19:30:29
  */
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 import Home from '../views/Home.vue';
