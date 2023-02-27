@@ -5,7 +5,7 @@
  * @Autor: liushuhao
  * @Date: 2021-09-26 16:25:25
  * @LastEditors: liushuhao
- * @LastEditTime: 2023-02-14 22:51:32
+ * @LastEditTime: 2023-02-27 09:19:33
  */
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
@@ -30,11 +30,6 @@ module.exports = {
   indexPath: 'index.html',
   productionSourceMap: false,
   configureWebpack: (config) => {
-    // config.plugins.push(
-    //     new CleanWebpackPlugin({
-    //         cleanOnceBeforeBuildPatterns: ['** /*', path.resolve(__dirname, 'dashboard')]
-    //     })
-    // )
     const optimization = {
       runtimeChunk: {
         name: 'runtime',

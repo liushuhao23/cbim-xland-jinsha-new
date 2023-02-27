@@ -4,7 +4,7 @@
  * @Autor: liushuhao
  * @Date: 2023-02-10 09:58:28
  * @LastEditors: liushuhao
- * @LastEditTime: 2023-02-13 23:36:52
+ * @LastEditTime: 2023-02-27 18:34:12
  */
 /*
  * @Description: description
@@ -34,7 +34,7 @@ function render(props: mountProps = { container: '', registry: { activeRule: '' 
   // eslint-disable-next-line no-underscore-dangle
   console.log(window.__POWERED_BY_QIANKUN__, 'window.__POWERED_BY_QIANKUN__');
   // eslint-disable-next-line no-underscore-dangle
-  const base = window.__POWERED_BY_QIANKUN__ ? '/jinsha' : '';
+  const base = window.__POWERED_BY_QIANKUN__ ? '/jinsh' : '';
   console.log(base, 'base');
   // 在 render 中创建 VueRouter，可以保证在卸载微应用时，移除 location 事件监听，防止事件污染
   router = createRouter({
