@@ -1,0 +1,164 @@
+
+/* 基本变化动画 */
+.s-transform-m(@t:all,@dur:0.3s ,@func:linear,@delay:0s) {
+  -moz-transition: @t @dur @func @delay;
+  -webkit-transition: @t @dur @func @delay;
+  -o-transition: @t @dur @func @delay;
+  transition: @t @dur @func @delay;
+}
+
+/* 阴影 */
+.s-shadow(@xf:2px,@yf:2px,@dis:5px,@cor:rgba(0, 0, 0, 0.32),@blur:2px) {
+  box-shadow: @xf @yf @blur @dis @cor;
+  -webkit-box-shadow: @xf @yf @blur @dis @cor;
+  -moz-box-shadow: @xf @yf @blur @dis @cor;
+}
+
+/* 阴影 */
+.s-shadow-text(@xf:2px,@yf:2px,@dis:5px,@cor:rgba(0, 0, 0, 0.1),@blur:2px) {
+  text-shadow: @xf @yf @blur @dis @cor;
+}
+
+/* 布局 */
+.s-layout-flex( @dir:column , @hor:flex-start ,@ver:flex-start) {
+  display: flex;
+  display: -webkit-box; /* 老版本语法: Safari, iOS, Android browser, older WebKit browsers. */
+  display: -moz-box; /* 老版本语法: Firefox (buggy) */
+  display: -ms-flexbox; /* 混合版本语法: IE 10 */
+  display: -webkit-flex; /* 新版本语法: Chrome 21+ */
+  -ms-flex-direction: @dir;
+  flex-direction: @dir;
+  justify-content: @hor;
+  -ms-flex-pack: @hor;
+  align-items: @ver;
+  -ms-flex-align: @ver;
+}
+
+/* less真没sass好用 */
+.s-layout-flex( @dir:column , @hor:flex-start ,@ver:flex-start) when (@hor=flex-start) {
+  justify-content: flex-start;
+}
+.s-layout-flex( @dir:column , @hor:flex-start ,@ver:flex-start) when (@hor=flex-end) {
+  justify-content: flex-end;
+}
+.s-layout-flex( @dir:column , @hor:flex-start ,@ver:flex-start) when (@ver=flex-start) {
+  align-items: flex-start;
+}
+.s-layout-flex( @dir:column , @hor:flex-start ,@ver:flex-start) when (@ver=flex-end) {
+  align-items: flex-end;
+}
+
+/* 垂直布局 */
+.s-ver-group(@hor:flex-start ,@ver:flex-start) {
+  .s-layout-flex(column, @ver, @hor);
+}
+
+/* 水平布局  align-items stretch */
+.s-hor-group(@hor:flex-start ,@ver:center) {
+  .s-layout-flex(row, @hor, @ver);
+}
+
+.s-hor-stretch(){
+  align-items: stretch;
+  -ms-flex-align: stretch;
+}
+
+/* 平铺布局 */
+.s-tile-group(@hor:flex-start ,@ver:flex-start) {
+  display: flex;
+  display: -webkit-box; /* 老版本语法: Safari, iOS, Android browser, older WebKit browsers. */
+  display: -moz-box; /* 老版本语法: Firefox (buggy) */
+  display: -ms-flexbox; /* 混合版本语法: IE 10 */
+  display: -webkit-flex; /* 新版本语法: Chrome 21+ */
+  flex-direction: row;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+  align-items: flex-start;
+  overflow: hidden;
+}
+
+/* 两端对齐 */
+.s-ly-between{
+  justify-content: space-between;
+}
+
+/* 平铺布局 */
+.s-abs-group(@left:0,@top:0 ,@right:0,@bottom:0) {
+  position: absolute;
+  top: @top;
+  right: @right;
+  bottom: @bottom;
+  left: @left;
+}
+
+/* 动画 */
+.s-effect-all(@prop:all,@time:300ms,@func:linear,@delay:0s) {
+  transition: @prop @time @func @delay;
+}
+
+/* 百分比 */
+.s-pre(@prop,@pix){
+@prop:((@pix / 7200)* 100) % ;
+}
+
+/* 渐变 */
+.s-bg-linear(@s,@e,@dir:right,@dir2:left) {
+  background: -webkit-linear-gradient(@dir2, @s, @e);
+  background: -o-linear-gradient(@dir, @s, @e);
+  background: -moz-linear-gradient(@dir, @s, @e);
+  background: -mos-linear-gradient(@dir, @s, @e);
+  background: linear-gradient(to @dir, @s, @e);
+}
+
+
+/* 透明输入框 */
+.s-trans-input(@w:100%,@h:25px,@fl:auto) {
+  flex: @fl;
+  width: @w;
+  height: @h;
+  padding: 0 3px;
+  line-height: @h;
+  vertical-align: middle;
+  background-color: transparent;
+  border-style:none;
+  outline: none;
+  &:focus {
+    outline:none;
+  }
+}
+/* temp */
+.s-use-select(@flag:none) {
+  -webkit-user-select: @flag;
+  -moz-user-select: @flag;
+  -ms-user-select: @flag;
+  user-select: @flag;
+}
+
+/* temp */
+.s-text-dot(){
+  overflow: hidden;
+  word-break: keep-all;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* temp? */
+.s-trans-no-bor(){
+  background: transparent;
+  color:#000 ;
+  border:none;
+  outline: none;
+  width:100%;
+}
+
+/* 垂直居中文字 */
+.s-text-line(@height){
+  height:@height;
+  line-height:@height;
+  vertical-align: middle;
+}
+
+
+

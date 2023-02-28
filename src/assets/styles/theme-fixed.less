@@ -1,0 +1,254 @@
+@import "./common.less";
+@import "ant-design-vue/lib/style/themes/variable.less";
+
+.ant-table-thead{
+th{
+    font-weight: bold !important;
+}
+}
+.ant-menu-sub{
+    background: #fff!important;
+}
+.ant-modal-title{
+    font-weight: bold!important;
+}
+.modal-close-x{
+    width:48px!important;
+}
+//.ant-modal-footer{
+//    button{
+//        min-width:88px;
+//    }
+//}
+
+.ant-menu-vertical-left{
+    border:none!important;
+}
+//.ant-modal-confirm{
+//    .ant-modal-content{
+//    }
+//    .ant-modal-body{
+//        padding: 0 0 20px 0!important;
+//    }
+//    .ant-modal-confirm-body-wrapper{
+//        .s-ver-group() ;
+//        width:100%;
+//
+//        .ant-modal-confirm-body{
+//            .s-ver-group() ;
+//            flex:none;
+//            width:100%;
+//
+//            .anticon{
+//                display: none;
+//            }
+//
+//            .ant-modal-confirm-title{
+//                flex: none;
+//                height:40px;
+//                line-height: 40px;
+//                vertical-align: middle;
+//                width:100%;
+//                padding: 0 20px;
+//                box-sizing: border-box;
+//                border-bottom: 1px solid #ededed;
+//                font-size:14px;
+//                font-weight: bold;
+//            }
+//            .ant-modal-confirm-content {
+//                flex:none;
+//                width:100%;
+//                min-height: 80px;
+//                padding: 26px 20px 26px 20px;
+//                margin-left:0!important;
+//                box-sizing: border-box;
+//                text-align: left;
+//                color: rgba(51, 51, 51, 1);
+//                font-size: 14px;
+//            }
+//        }
+//
+//    }
+//    .ant-modal-confirm-btns{
+//        .s-hor-group(flex-end) ;
+//        flex:none;
+//        width:100%;
+//        padding: 0 20px;
+//        box-sizing: border-box;
+//        margin-top: 0!important;
+//        .ant-btn{
+//            min-width: 88px;
+//            margin-left: 10px;
+//        }
+//        .ant-btn:first-child{
+//            margin-left: 0;
+//        }
+//    }
+//
+//}
+
+.ant-modal-confirm-body{
+
+}
+
+/*------------------------------------------------------------------------ layout -------------------------------------------------*/
+
+//列表布局
+.rh-content-box{
+    .s-ver-group() ;
+    flex:auto;
+    width:100%;
+    height:100%;
+}
+
+//搜索栏
+.rh-search-form{
+    .s-hor-group() ;
+    width:100%;
+    padding: 8px 0 10px 0;
+    min-height: 58px;
+    box-sizing: border-box;
+
+    .rh-search-item{
+        flex:none;
+        width:200px;
+        margin-right: 10px;
+    }
+
+    .rh-search-date{
+        flex:none;
+        width:300px;
+        margin-right: 10px;
+    }
+
+    .rh-search-state{
+        flex:none;
+        margin-right: 10px;
+        min-width:150px;
+    }
+
+    .rh-gap-item{
+        flex:auto;
+        width:100%
+    }
+
+    .ant-btn{
+        margin-right: 10px;
+        //min-width:88px; temp???????? 有空再找原因
+    }
+    .search-btn{
+        min-width:88px;
+    }
+
+    .ant-input-affix-wrapper{
+        border:1px solid @input-bg!important;
+    }
+    .ant-select-selector{
+        border:1px solid @input-bg!important;
+    }
+    .ant-picker{
+        border:1px solid @input-bg!important;
+    }
+}
+
+//表格框
+.rh-table-box{
+    flex:auto;
+    width:100%;
+    height:100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    background: @component-background;
+    border-bottom:1px solid @table-border-color;
+
+    .rh-table-inner{
+        width:100%;
+        height:100%;
+        position:relative;
+        overflow: hidden;
+    }
+}
+
+
+
+/*------------------------------------------------------------------------ state btn -------------------------------------------------*/
+.rh-state-box {
+    .s-hor-group(flex-start) ;
+    width:100%;
+    hieght:100%;
+    span{
+        .s-hor-group(center);
+        display: block;
+        flex:none;
+        height:20px;
+        padding: 0 6px;
+        border-radius: 2px;
+        font-size: 12px;
+        box-sizing: border-box;
+        border: 1px solid #e0e0e0;
+        overflow: hidden;
+        background: #f7f6f6;
+        color: #d0cece;
+    }
+}
+.rh-state-box-center{
+    .rh-state-box;
+    .s-hor-group(center) ;
+}
+//成功
+.rh-state-box-ok{
+    span{
+        border: 1px solid #8bc7ff;
+        background: #f3f9ff;
+        color: #1890ff;
+    }
+}
+
+//警告
+.rh-state-box-no{
+    span{
+        border: 1px solid #ffd1a3;
+        background: #fff9f3;
+        color: #ff8d1a;
+    }
+}
+//失败
+.rh-state-box-error{
+    span{
+        border: 1px solid #fbb5b1;
+        background: #fff6f6;
+        color: #f52230;
+    }
+}
+//默认
+.rh-state-box-success{
+    span{
+        border: 1px solid #7fd3c0;
+        background: #f6fcf3;
+        color: #00a881;
+    }
+}
+
+.rh-column-dot-name{
+    .s-text-dot();
+    width:100%;
+    text-align: left;
+    span{
+        .s-text-dot();
+        width:100%;
+    }
+}
+
+/*------------------------------------------------------------------------ table opt btn -------------------------------------------------*/
+.rh-opt-btn{
+    padding:4px 5px !important;
+}
+
+.rh-opt-btn-del{
+    padding:4px 5px !important;
+    cursor:pointer;
+    color:red;
+    &:hover{
+        color:red;
+    }
+}

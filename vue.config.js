@@ -5,7 +5,7 @@
  * @Autor: liushuhao
  * @Date: 2021-09-26 16:25:25
  * @LastEditors: liushuhao
- * @LastEditTime: 2023-02-27 09:19:33
+ * @LastEditTime: 2023-02-28 09:27:55
  */
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
@@ -65,10 +65,7 @@ module.exports = {
     Object.assign(config.optimization, optimization);
   },
   chainWebpack: (config) => {
-    config.resolve.alias
-      .set('@', resolve('src'))
-      .set('@assets', resolve('src/assets'))
-      .set('@components', resolve('src/components'));
+    config.resolve.alias.set('@', resolve('src')).set('@assets', resolve('src/assets')).set('@components', resolve('src/components'));
     if (!isDev) {
       // 生产环境生效 去掉console debugger
       config.optimization.minimizer('terser').tap((args) => {
@@ -87,6 +84,16 @@ module.exports = {
           javascriptEnabled: true,
         },
       },
+    },
+  },
+  pluginOptions: {
+    'style-resources-loader': {
+      preProcessor: 'less',
+      patterns: [
+        path.resolve(__dirname, './node_modules/ant-design-vue/lib/style/themes/variable.less'),
+        path.resolve(__dirname, './src/styles/common.less'),
+        path.resolve(__dirname, './src/styles/variables.less'),
+      ],
     },
   },
   devServer: {

@@ -4,7 +4,7 @@
  * @Autor: liushuhao
  * @Date: 2023-02-10 09:58:28
  * @LastEditors: liushuhao
- * @LastEditTime: 2023-02-27 18:34:12
+ * @LastEditTime: 2023-02-28 09:23:12
  */
 /*
  * @Description: description
@@ -17,10 +17,15 @@
 import './public-path';
 import { createApp } from 'vue';
 import { createRouter, createWebHistory } from 'vue-router';
+import Antd from 'ant-design-vue';
 import App from './App.vue';
 import routes from './router';
 import store from './store';
 import CommunicationProtocol from './assets/utils/CommunicationProtocol';
+import 'ant-design-vue/dist/antd.css';
+import '@/assets/styles/theme-fixed.less';
+import '@/assets/styles/index.less';
+import '@/assets/css/index.less';
 
 let instance: any = null;
 let router = null;
@@ -45,6 +50,7 @@ function render(props: mountProps = { container: '', registry: { activeRule: '' 
   instance = createApp(App);
   instance
     .use(store)
+    .use(Antd)
     .use(CommunicationProtocol, props)
     .use(router)
     .mount(container ? (container as any).querySelector('#app') : '#app');
